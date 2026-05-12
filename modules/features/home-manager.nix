@@ -4,7 +4,7 @@
   ...
 }: {
   # Import and configure home-manager
-  flake.nixosModules.homeManager = {pkgs, ...}: {
+  flake.nixosModules.myHomeManager = {pkgs, ...}: {
     imports = [
       # Import home manager
       inputs.home-manager.nixosModules.default

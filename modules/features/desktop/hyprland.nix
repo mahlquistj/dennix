@@ -63,39 +63,39 @@
         ];
       };
     };
-  };
 
-  programs.hyprlock = {
-    enable = true;
-    settings = {
-      general = {
-        no_fade_in = false;
-        no_fade_out = false;
-        hide_cursor = false;
-        grace = 0;
-        ignore_empty_input = true;
-        disable_loading_bar = true;
-      };
+    programs.hyprlock = {
+      enable = true;
+      settings = {
+        general = {
+          no_fade_in = false;
+          no_fade_out = false;
+          hide_cursor = false;
+          grace = 0;
+          ignore_empty_input = true;
+          disable_loading_bar = true;
+        };
 
-      background = {
-        path = "screenshot";
-        blur_passes = 2;
-        contrast = 1;
-        brightness = 0.5;
-        vibrancy = 0.2;
-        vibrancy_darkness = 0.2;
+        background = {
+          path = "screenshot";
+          blur_passes = 2;
+          contrast = 1;
+          brightness = 0.5;
+          vibrancy = 0.2;
+          vibrancy_darkness = 0.2;
+        };
       };
     };
-  };
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    systemd.enable = true;
-    package = null;
+    wayland.windowManager.hyprland = {
+      enable = true;
+      systemd.enable = true;
+      package = null;
 
-    plugins = [];
+      plugins = [];
 
-    settings = {
+      settings = {
+      };
     };
   };
 }

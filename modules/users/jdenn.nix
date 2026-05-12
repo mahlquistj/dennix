@@ -16,7 +16,7 @@
   };
 
   flake.homeModules.jdenn = {pkgs, ...}: {
-    modules = [
+    imports = [
       self.homeModules.hyprland
     ];
 
