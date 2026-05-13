@@ -16,18 +16,50 @@
   };
 
   flake.homeModules.jdenn = {pkgs, ...}: {
-    imports = [
-      self.homeModules.hyprland
+    imports = with self.homeModules; [
+      # Nix extensions
+      inputs.catppuccin.homeModules.catppuccin
+
+      # Desktop
+      hyprland
+      hypridle
+      hyprlock
+
+      # Apps
+      chromium
     ];
 
     home.packages = with pkgs; [
     ];
+
+    # Theme config
+    catppuccin = {
+      enable = true;
+      flavor = "mocha";
+      accent = "peach";
+    };
+
+    # User-specific hyprland configuration
+    wayland.windowManager.hyprland.settings = {
+      # Border colors
+      general = {
+        # `$peach` and `$base` come from Catppuccin.
+        "col.active_border" = "$peach";
+        "col.inactive_border" = "$base";
+      };
+      # Apps
+      "$terminal" = "rio";
+      "$menu" = "";
+      "$lock" = "hyprlock";
+    };
 
     services = {
       # Automount USB's
       udiskie.enable = true;
     };
 
-    home.stateVersion = "24.11";
+    xdg.enable = true;
+
+    home.stateVersion = "25.11";
   };
 }

@@ -4,19 +4,33 @@
   ...
 }: {
   # Nixos configuration entry point
-  flake.nixosConfigurations.Lene = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.lene = inputs.nixpkgs.lib.nixosSystem {
     modules = [
-      self.nixosModules.Lene
+      self.nixosModules.lene
       self.nixosModules.myHomeManager
     ];
   };
 
   # Actual nixos configuration
-  flake.nixosModules.Lene = {pkgs, ...}: {
-    imports = [
+  flake.nixosModules.lene = {pkgs, ...}: {
+    imports = with self.nixosModules; [
       ./hardware-configuration.nix
-      self.nixosModules.hyprland
+      hyprland
+      audio
     ];
+
+    # Networking
+    networking = {
+      hostName = "Lene";
+      networkmanager.enable = true;
+      firewall.enable = true;
+    };
+
+    # Security
+    security = {
+      sudo.enable = true;
+      polkit.enable = true;
+    };
 
     # Boot options
     boot = {
@@ -38,6 +52,9 @@
       };
     };
 
+    # Allow unfree software
+    nixpkgs.config.allowUnfree = true;
+
     # Users settings
     users.users.jdenn = {
       isNormalUser = true;
@@ -47,7 +64,6 @@
 
     # System packages
     environment.systemPackages = with pkgs; [
-      udiskie
     ];
   };
 }
