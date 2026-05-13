@@ -69,6 +69,8 @@ All movement commands support both **arrow keys** and **HJKL** (vim-style):
 
 ## Audio & Media
 
+> Note: Requires `audio-keybinds` module in home configuration.
+
 ### Hardware Controls
 
 | Keybind                | Action                 |
@@ -90,8 +92,9 @@ All movement commands support both **arrow keys** and **HJKL** (vim-style):
 
 ## Display
 
+> Note: Requires `brightness-keybinds` module in home configuration.
+
 | Keybind                 | Action          |
 | ----------------------- | --------------- |
 | `XF86MonBrightnessUp`   | Brightness up   |
 | `XF86MonBrightnessDown` | Brightness down |
-

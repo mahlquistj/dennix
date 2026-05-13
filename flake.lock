@@ -144,7 +144,44 @@
         "import-tree": "import-tree",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
+        "vicinae": "vicinae",
         "wrapper-modules": "wrapper-modules"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "vicinae": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1778704154,
+        "narHash": "sha256-jrkdVcCu76sOYraO2DZBrdJnThArnnjxcdkQFZuXdYE=",
+        "owner": "vicinaehq",
+        "repo": "vicinae",
+        "rev": "c52c34e28449eda4aec8fd2390285dab4b403c4a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vicinaehq",
+        "repo": "vicinae",
+        "type": "github"
       }
     },
     "wrapper-modules": {

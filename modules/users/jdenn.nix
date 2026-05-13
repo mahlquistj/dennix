@@ -29,6 +29,9 @@
       brightness-keybinds
       screen-record-wayland
 
+      # Launcher
+      vicinae
+
       # Configured packages/apps
       chromium
       git
@@ -38,10 +41,11 @@
     home.packages = with pkgs; [
       # Add one-shot packages that don't need config here
       curl
+      vscode # Vscode with no config managed by nix
 
       # Other fonts we may want for compatability
-      twemoji-color-font
-      google-fonts
+      twemoji-color-font # Emoji
+      google-fonts # Big font collection
     ];
 
     services = {
@@ -79,7 +83,7 @@
       };
       # Apps
       "$terminal" = "rio";
-      "$launcher" = "";
+      "$launcher" = "vicinae toggle";
       "$lock" = "hyprlock";
     };
 

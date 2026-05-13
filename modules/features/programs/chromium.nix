@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.homeModules.chromium = {pkgs, ...}: {
     programs.chromium = {
       enable = true;

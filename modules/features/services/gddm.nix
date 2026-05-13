@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.gddm = {pkgs, ...}: {
+  flake.nixosModules.gdm = {pkgs, ...}: {
     services.displayManager.gdm = {
       enable = true;
     };

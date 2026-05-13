@@ -13,16 +13,19 @@
 
   # Actual nixos configuration
   flake.nixosModules.lene = {pkgs, ...}: {
-    imports = [
+    imports = with self.nixosModules; [
       # Hardware configuration - Always needed.
       # Describes the actual hardware of the system
       ./hardware-configuration.nix
 
       # Hyprland system dependencies
-      self.nixosModules.hyprland
+      hyprland
+
+      # GDM lockscreen
+      gdm
 
       # Audio dependencies
-      self.nixosModules.audio
+      audio
     ];
 
     # Fonts
