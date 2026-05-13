@@ -32,6 +32,9 @@
       # Launcher
       vicinae
 
+      # Bar
+      hyprland-waybar
+
       # Configured packages/apps
       chromium
       git

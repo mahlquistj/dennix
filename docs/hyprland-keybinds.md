@@ -2,12 +2,12 @@
 
 ## Spawners
 
-| Keybind             | Action                   |
-| ------------------- | ------------------------ |
-| `SUPER + Return`    | Open terminal (Rio)      |
-| `SUPER + Space`     | Open app launcher (Rofi) |
-| `SUPER + Escape`    | Lock screen              |
-| `SUPER + Shift + E` | Exit Hyprland            |
+| Keybind             | Action                      |
+| ------------------- | --------------------------- |
+| `SUPER + Return`    | Open terminal (Rio)         |
+| `SUPER + Space`     | Open app launcher (Vicinae) |
+| `SUPER + Escape`    | Lock screen                 |
+| `SUPER + Shift + E` | Exit Hyprland               |
 
 ## Workspaces
 
@@ -53,6 +53,8 @@ All movement commands support both **arrow keys** and **HJKL** (vim-style):
 
 ## Screenshots
 
+> Note: Requires `screen-record-wayland` module in home configuration.
+
 | Keybind                 | Action                   |
 | ----------------------- | ------------------------ |
 | `SUPER + Print`         | Screenshot active window |
@@ -60,6 +62,8 @@ All movement commands support both **arrow keys** and **HJKL** (vim-style):
 | `Print`                 | Screenshot entire output |
 
 ## Screen Recording
+
+> Note: Requires `screen-record-wayland` module in home configuration.
 
 | Keybind             | Action                 |
 | ------------------- | ---------------------- |

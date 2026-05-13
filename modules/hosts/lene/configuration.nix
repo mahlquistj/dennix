@@ -28,6 +28,11 @@
       audio
     ];
 
+    # System packages
+    environment.systemPackages = with pkgs; [
+      # Add any system-wide packages you might need here
+    ];
+
     # Fonts
     fonts = {
       packages = with pkgs; [
@@ -58,8 +63,32 @@
       };
     };
 
-    # Cleanup rules
+    # Time and internationalisation
+    time.timeZone = "Europe/Copenhagen";
+    location.provider = "geoclue2";
+    console.keyMap = "dk";
+    i18n = {
+      defaultLocale = "en_US.UTF-8";
+      extraLocaleSettings = {
+        LC_ADDRESS = "en_US.UTF-8";
+        LC_IDENTIFICATION = "en_US.UTF-8";
+        LC_MEASUREMENT = "en_US.UTF-8";
+        LC_MONETARY = "en_US.UTF-8";
+        LC_NAME = "en_US.UTF-8";
+        LC_NUMERIC = "en_US.UTF-8";
+        LC_PAPER = "en_US.UTF-8";
+        LC_TELEPHONE = "en_US.UTF-8";
+        LC_TIME = "en_US.UTF-8";
+      };
+    };
+
+    # udisks2 daemon
+    services.udisks2.enable = true;
+
+    # Nix settings
     nix = {
+      settings.experimental-features = ["nix-command" "flakes"];
+      # Cleanup rules
       optimise.automatic = true;
       gc = {
         automatic = true;
@@ -72,14 +101,13 @@
     nixpkgs.config.allowUnfree = true;
 
     # Users settings
-    users.users.jdenn = {
-      isNormalUser = true;
-      shell = pkgs.bash;
+    users = {
+      defaultUserShell = pkgs.bash;
+      users.jdenn = {
+        isNormalUser = true;
+        extraGroups = ["networkmanager" "wheel"];
+      };
     };
     home-manager.users.jdenn = self.homeModules.jdenn;
-
-    # System packages
-    environment.systemPackages = with pkgs; [
-    ];
   };
 }

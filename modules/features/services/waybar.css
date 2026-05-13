@@ -1,0 +1,235 @@
+/* #### GENERAL #### */
+* {
+  all: unset;
+  font-family: "Source Code Pro", "Symbols Nerd Font Mono";
+  font-size: 12px;
+  color: @text;
+  font-weight: bold;
+}
+
+window#waybar {
+  all: unset;
+}
+
+/* Global classes */
+.good {
+  color: @green;
+}
+
+.warning {
+  color: @yellow;
+}
+
+.critical {
+  color: @red;
+}
+
+/* Add transparent background */
+.modules-center > widget > *,
+.modules-left > widget > *,
+.modules-right > widget > * {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 5px;
+}
+
+/* Global padding for labels within modules */
+.modules-center > widget > * label,
+.modules-left > widget > * label,
+.modules-right > widget > * label {
+  padding: 0px 4px;
+}
+
+/* Reset seperator padding */
+#custom-seperator label {
+  all: unset;
+}
+
+/* Margin for widgets in the left section */
+.modules-left > widget > box,
+.modules-left > widget > label {
+  margin-right: 5px;
+}
+
+/* Margin for widgets in the right section */
+.modules-right > widget > box,
+.modules-right > widget > label {
+  margin-left: 5px;
+}
+
+/*.modules-right > widget:first-child > box,
+.modules-right > widget:first-child > label {
+    margin-left: 0px;
+}*/
+
+/* On hover/click menus */
+tooltip,
+#tray menu {
+  background-color: @base;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+/* #### POWER #### */
+#power {
+  font-weight: bold;
+}
+
+#custom-power {
+  color: @red;
+}
+
+/* #### WORKSPACES #### */
+#workspaces button {
+  all: unset;
+  background-color: @flamingo;
+  transition-property: background-color, width, min-width;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  border-radius: 12px;
+  margin-right: 5px;
+  min-width: 16px;
+}
+
+#workspaces button * {
+  color: @crust;
+}
+
+#workspaces button:last-child {
+  margin-right: 0px;
+}
+
+#workspaces button.empty {
+  background-color: @surface0;
+}
+
+#workspaces button.active.empty {
+  background-color: @surface1;
+  min-width: 3.5rem;
+}
+
+#workspaces button.empty * {
+  color: @text;
+}
+
+#workspaces button.active {
+  background-color: @peach;
+  min-width: 3.5rem;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+}
+
+#workspaces button:hover {
+  background-color: @overlay2;
+}
+
+#workspaces button:hover * {
+  color: @text;
+}
+
+/* #### HARDWARE #### */
+@keyframes critical_swap {
+  25% {
+    color: @red;
+  }
+  50% {
+    color: transparent;
+  }
+  75% {
+    color: @red;
+  }
+}
+
+/* hardware circle indicators */
+#hardware > widget > * {
+  color: @green;
+}
+
+#wireplumber.muted {
+  color: @red;
+}
+
+/* #### NETWORK #### */
+#network.disconnected {
+  color: @red;
+}
+
+/* #### NOTIFICATIONS #### */
+#custom-notification.notification {
+  color: @blue;
+}
+
+#custom-notification.dnd-none,
+#custom-notification.dnd-notification {
+  color: @red;
+}
+
+/* #### CLOCK #### */
+#clock {
+  font-weight: bold;
+}
+
+/* #### BATTERY #### */
+@keyframes critical_charging {
+  25% {
+    color: @red;
+  }
+  50% {
+    color: @yellow;
+  }
+  75% {
+    color: @red;
+  }
+}
+
+@keyframes warning_charging {
+  25% {
+    color: @yellow;
+  }
+  50% {
+    color: @green;
+  }
+  75% {
+    color: @yellow;
+  }
+}
+
+@keyframes good_charging {
+  25% {
+    color: @green;
+  }
+  50% {
+    color: @text;
+  }
+  75% {
+    color: @green;
+  }
+}
+
+#battery {
+  color: @green;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+#battery.charging.good {
+  animation: good_charging 4s infinite;
+}
+
+#battery.charging.warning {
+  animation: warning_charging 4s infinite;
+}
+
+#battery.warning {
+  color: @yellow;
+}
+
+#battery.charging.critical {
+  animation: critical_charging 4s infinite;
+}
+
+#battery.critical {
+  color: @red;
+}
