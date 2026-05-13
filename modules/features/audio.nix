@@ -11,9 +11,5 @@
       pulse.enable = true;
       alsa.enable = true;
     };
-    environment.systemPackages = with pkgs; [
-      pavucontrol # General Audio GUI
-      pulseaudio # Audio CLI controller
-    ];
   };
 }
