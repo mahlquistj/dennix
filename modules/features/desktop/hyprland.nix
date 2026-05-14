@@ -184,7 +184,7 @@ builtins.trace "LOADED HYPRLAND MODULE"
               [
                 # Spawners
                 "$mod, Return, exec, $terminal"
-                "$mod, SPACE, exec, $menu"
+                "$mod, SPACE, exec, $launcher"
                 "$mod, ESCAPE, exec, $lock"
                 "$modshift, E, exit"
 
